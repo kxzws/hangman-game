@@ -1,7 +1,7 @@
 import React from 'react';
 
-import * as styled from './styled';
+import { Container } from './styled';
 
 export const Screen = () => {
-  return <styled.Container>Screen</styled.Container>;
+  return <Container>Screen</Container>;
 };

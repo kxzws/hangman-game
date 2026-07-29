@@ -2,13 +2,13 @@ import React from 'react';
 
 import { Screen, Word } from '../../components';
 
-import * as styled from './styled';
+import { Container } from './styled';
 
 export const HangmanGame = () => {
   return (
-    <styled.Container>
+    <Container>
       <Screen />
       <Word />
-    </styled.Container>
+    </Container>
   );
 };

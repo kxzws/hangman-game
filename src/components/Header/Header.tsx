@@ -1,11 +1,11 @@
 import React from 'react';
 
-import * as styled from './styled';
+import { Header as StyledHeader, Heading } from './styled';
 
 export const Header = () => {
   return (
-    <styled.Header>
-      <styled.Heading>Hangman Game</styled.Heading>
-    </styled.Header>
+    <StyledHeader>
+      <Heading>Hangman Game</Heading>
+    </StyledHeader>
   );
 };

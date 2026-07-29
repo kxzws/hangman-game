@@ -1,7 +1,7 @@
 import React from 'react';
 
-import * as styled from './styled';
+import { Container } from './styled';
 
 export const Word = () => {
-  return <styled.Container>Word</styled.Container>;
+  return <Container>Word</Container>;
 };
