@@ -1,21 +1,105 @@
-import React from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { Container, Label, StartBtn } from './styled';
+import { MAX_WORD_LENGTH, MIN_WORD_LENGTH } from '../../constants/words';
+import { getRandomWord, isValidGameWord } from '../../utils/words';
+
+import { Container, ErrorMessage, Label, ModeGroup, StartBtn, WordInput } from './styled';
+
+enum GameModeType {
+  Random = 'random',
+  Word = 'word',
+}
 
 export const StartMenu = () => {
+  const navigate = useNavigate();
+
+  const [gameMode, setGameMode] = useState<GameModeType>(GameModeType.Random);
+  const [customWord, setCustomWord] = useState('');
+  const [validationError, setValidationError] = useState('');
+
+  const handleGameModeChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const nextGameMode = event.target.value;
+
+    if (nextGameMode !== GameModeType.Random && nextGameMode !== GameModeType.Word) {
+      return;
+    }
+
+    setGameMode(nextGameMode);
+    setValidationError('');
+  };
+
+  const handleCustomWordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setCustomWord(event.target.value);
+    setValidationError('');
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (gameMode === GameModeType.Word && !isValidGameWord(customWord)) {
+      setValidationError(
+        `Enter ${MIN_WORD_LENGTH}-${MAX_WORD_LENGTH} Latin letters without spaces.`
+      );
+
+      return;
+    }
+
+    const word = gameMode === GameModeType.Random ? getRandomWord() : customWord.toLowerCase();
+
+    navigate('/game', { state: { word } });
+  };
+
   return (
-    <Container>
-      <Label htmlFor="random">
-        <input id="random" type="radio" name="gameType" value="random" defaultChecked />
-        random
-      </Label>
+    <Container aria-label="Start a Hangman game" onSubmit={handleSubmit}>
+      <ModeGroup aria-label="Game mode">
+        <Label htmlFor="random">
+          <input
+            id="random"
+            type="radio"
+            name="gameType"
+            value={GameModeType.Random}
+            checked={gameMode === GameModeType.Random}
+            onChange={handleGameModeChange}
+          />
+          random
+        </Label>
 
-      <Label htmlFor="word">
-        <input id="word" type="radio" name="gameType" value="word" />
-        word
-      </Label>
+        <Label htmlFor="word">
+          <input
+            id="word"
+            type="radio"
+            name="gameType"
+            value={GameModeType.Word}
+            checked={gameMode === GameModeType.Word}
+            onChange={handleGameModeChange}
+          />
+          word
+        </Label>
+      </ModeGroup>
 
-      <StartBtn to="/game">Start</StartBtn>
+      {gameMode === GameModeType.Word && (
+        <>
+          <WordInput
+            id="custom-word"
+            type="text"
+            value={customWord}
+            onChange={handleCustomWordChange}
+            placeholder="Enter a word"
+            aria-label="Word to guess"
+            aria-required="true"
+            aria-invalid={Boolean(validationError)}
+            aria-describedby={validationError ? 'custom-word-error' : undefined}
+          />
+          {validationError && (
+            <ErrorMessage id="custom-word-error" role="alert">
+              {validationError}
+            </ErrorMessage>
+          )}
+        </>
+      )}
+
+      <StartBtn type="submit">Start</StartBtn>
     </Container>
   );
 };
