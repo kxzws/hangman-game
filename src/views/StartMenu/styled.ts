@@ -9,6 +9,15 @@ export const Container = styled.form`
   row-gap: 24px;
 `;
 
+export const ModeGroup = styled.fieldset`
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+`;
+
 export const Label = styled.label`
   display: flex;
   align-items: center;

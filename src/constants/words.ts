@@ -1,8 +1,6 @@
 export const MIN_WORD_LENGTH = 3;
 export const MAX_WORD_LENGTH = 30;
 
-const WORD_PATTERN = /^[a-zA-Z]+$/;
-
 export const LOCAL_WORDS = [
   'anchor',
   'autumn',
@@ -41,12 +39,3 @@ export const LOCAL_WORDS = [
   'whisper',
   'winter',
 ] as const;
-
-export const isValidGameWord = (word: string): boolean =>
-  WORD_PATTERN.test(word) && word.length >= MIN_WORD_LENGTH && word.length <= MAX_WORD_LENGTH;
-
-export const getRandomWord = (): string => {
-  const randomIndex = Math.floor(Math.random() * LOCAL_WORDS.length);
-
-  return LOCAL_WORDS[randomIndex];
-};

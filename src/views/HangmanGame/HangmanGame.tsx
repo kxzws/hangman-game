@@ -2,19 +2,15 @@ import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
 import { Screen, Word } from '../../components';
-import { isValidGameWord } from '../../constants';
+import { isGameLocationState } from '../../utils/game';
+import { isValidGameWord } from '../../utils/words';
 
 import { Container } from './styled';
 
-type GameLocationState = {
-  word?: string;
-};
-
 export const HangmanGame = () => {
   const location = useLocation();
-  const word = (location.state as GameLocationState | null)?.word;
 
-  if (!word || !isValidGameWord(word)) {
+  if (!isGameLocationState(location.state) || !isValidGameWord(location.state.word)) {
     return <Navigate to="/" replace />;
   }
 
