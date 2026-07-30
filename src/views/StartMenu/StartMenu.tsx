@@ -6,8 +6,7 @@ import { getRandomWord, isValidGameWord } from '../../utils/words';
 
 import { Container, ErrorMessage, Label, ModeGroup, StartBtn, WordInput } from './styled';
 
-// eslint-disable-next-line no-shadow
-enum GameMode {
+enum GameModeType {
   Random = 'random',
   Word = 'word',
 }
@@ -15,14 +14,14 @@ enum GameMode {
 export const StartMenu = () => {
   const navigate = useNavigate();
 
-  const [gameMode, setGameMode] = useState<GameMode>(GameMode.Random);
+  const [gameMode, setGameMode] = useState<GameModeType>(GameModeType.Random);
   const [customWord, setCustomWord] = useState('');
   const [validationError, setValidationError] = useState('');
 
   const handleGameModeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const nextGameMode = event.target.value;
 
-    if (nextGameMode !== GameMode.Random && nextGameMode !== GameMode.Word) {
+    if (nextGameMode !== GameModeType.Random && nextGameMode !== GameModeType.Word) {
       return;
     }
 
@@ -38,7 +37,7 @@ export const StartMenu = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (gameMode === GameMode.Word && !isValidGameWord(customWord)) {
+    if (gameMode === GameModeType.Word && !isValidGameWord(customWord)) {
       setValidationError(
         `Enter ${MIN_WORD_LENGTH}-${MAX_WORD_LENGTH} Latin letters without spaces.`
       );
@@ -46,7 +45,7 @@ export const StartMenu = () => {
       return;
     }
 
-    const word = gameMode === GameMode.Random ? getRandomWord() : customWord.toLowerCase();
+    const word = gameMode === GameModeType.Random ? getRandomWord() : customWord.toLowerCase();
 
     navigate('/game', { state: { word } });
   };
@@ -59,8 +58,8 @@ export const StartMenu = () => {
             id="random"
             type="radio"
             name="gameType"
-            value={GameMode.Random}
-            checked={gameMode === GameMode.Random}
+            value={GameModeType.Random}
+            checked={gameMode === GameModeType.Random}
             onChange={handleGameModeChange}
           />
           random
@@ -71,15 +70,15 @@ export const StartMenu = () => {
             id="word"
             type="radio"
             name="gameType"
-            value={GameMode.Word}
-            checked={gameMode === GameMode.Word}
+            value={GameModeType.Word}
+            checked={gameMode === GameModeType.Word}
             onChange={handleGameModeChange}
           />
           word
         </Label>
       </ModeGroup>
 
-      {gameMode === GameMode.Word && (
+      {gameMode === GameModeType.Word && (
         <>
           <WordInput
             id="custom-word"
