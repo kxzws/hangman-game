@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
+export const Container = styled.form`
   margin: 0 auto;
   padding: 20px 0;
   width: fit-content;
@@ -16,7 +15,18 @@ export const Label = styled.label`
   column-gap: 6px;
 `;
 
-export const StartBtn = styled(Link)`
+export const WordInput = styled.input`
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #000;
+`;
+
+export const ErrorMessage = styled.p`
+  margin: -12px 0 0;
+  color: #c00;
+`;
+
+export const StartBtn = styled.button`
   padding: 8px 22px;
   font-size: 1.2rem;
   border: 1px solid #000;
