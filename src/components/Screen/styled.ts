@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
   width: 100%;
-  line-height: 1.25;
-  text-align: center;
-  text-transform: uppercase;
+
+  svg {
+    display: block;
+    margin: 0 auto;
+    width: min(100%, 200px);
+    height: auto;
+    fill: none;
+    stroke: #000;
+    stroke-linecap: round;
+    stroke-width: 4;
+  }
 `;
