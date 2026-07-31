@@ -10,17 +10,9 @@ export const Container = styled.div`
   row-gap: 24px;
 `;
 
-export const StatusMessage = styled.p`
-  font-size: 1.25rem;
-  font-weight: bold;
+export const IncorrectGuesses = styled.p`
+  width: 100%;
   line-height: 1.25;
   text-align: center;
-`;
-
-export const NewGameButton = styled.button`
-  min-height: 40px;
-  padding: 0 16px;
-  border: 1px solid #000;
-  background: #fff;
-  color: #000;
+  text-transform: uppercase;
 `;

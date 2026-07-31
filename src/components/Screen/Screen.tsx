@@ -1,19 +1,22 @@
 import React from 'react';
 
+import { HangmanSvg } from '../HangmanSvg';
+
 import { Container } from './styled';
 
 type ScreenProps = {
-  incorrectGuesses: string[];
-  maxIncorrectGuesses: number;
+  wrongGuessCount: number;
 };
 
-export const Screen = ({ incorrectGuesses, maxIncorrectGuesses }: ScreenProps) => {
-  const remainingGuesses = maxIncorrectGuesses - incorrectGuesses.length;
-
+export const Screen = ({ wrongGuessCount }: ScreenProps) => {
   return (
-    <Container aria-live="polite">
-      <p>Attempts remaining: {remainingGuesses}</p>
-      <p>Incorrect guesses: {incorrectGuesses.join(', ') || 'None'}</p>
+    <Container
+      role="img"
+      aria-label={`Hangman drawing with ${wrongGuessCount} incorrect guess${
+        wrongGuessCount === 1 ? '' : 'es'
+      }`}
+    >
+      <HangmanSvg wrongGuessCount={wrongGuessCount} />
     </Container>
   );
 };

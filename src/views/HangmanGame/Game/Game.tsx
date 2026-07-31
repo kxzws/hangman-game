@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Keyboard, Screen, Word } from '../../../components';
+import { Alphabet, ResultModal, Screen, Word } from '../../../components';
 import { ALPHABET, MAX_INCORRECT_GUESSES } from '../../../constants/game';
 import { GameStatus, getGameStatus, getIncorrectGuesses } from '../../../utils/game';
 
-import { Container, NewGameButton, StatusMessage } from './styled';
+import { Container, IncorrectGuesses } from './styled';
 
 type GameProps = {
   word: string;
@@ -30,24 +30,25 @@ export const Game = ({ word }: GameProps) => {
 
   return (
     <Container>
-      <Screen incorrectGuesses={incorrectGuesses} maxIncorrectGuesses={MAX_INCORRECT_GUESSES} />
+      <Screen wrongGuessCount={incorrectGuesses.length} />
       <Word word={word} guesses={guesses} revealWord={isFinished} />
-      {isFinished && (
-        <>
-          <StatusMessage role="status">
-            {gameStatus === GameStatus.Won ? 'You won!' : `You lost. The word was ${word}.`}
-          </StatusMessage>
-          <NewGameButton type="button" onClick={() => navigate('/')}>
-            New game
-          </NewGameButton>
-        </>
-      )}
-      <Keyboard
+      <IncorrectGuesses>
+        Incorrect guesses: {incorrectGuesses.join(', ') || 'None'}
+      </IncorrectGuesses>
+      <Alphabet
         letters={ALPHABET}
         guessedLetters={guesses}
         disabled={isFinished}
         onGuess={handleGuess}
       />
+
+      {isFinished && (
+        <ResultModal
+          hasWon={gameStatus === GameStatus.Won}
+          word={word}
+          onBackToStart={() => navigate('/')}
+        />
+      )}
     </Container>
   );
 };

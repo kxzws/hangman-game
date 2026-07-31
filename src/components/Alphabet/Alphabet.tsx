@@ -2,14 +2,14 @@ import React from 'react';
 
 import { Container, Key } from './styled';
 
-type KeyboardProps = {
+type AlphabetProps = {
   letters: string[];
   guessedLetters: string[];
   disabled: boolean;
   onGuess: (letter: string) => void;
 };
 
-export const Keyboard = ({ letters, guessedLetters, disabled, onGuess }: KeyboardProps) => {
+export const Alphabet = ({ letters, guessedLetters, disabled, onGuess }: AlphabetProps) => {
   return (
     <Container aria-label="Letter keyboard">
       {letters.map((letter) => (
