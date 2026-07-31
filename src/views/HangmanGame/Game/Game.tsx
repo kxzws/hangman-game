@@ -13,7 +13,9 @@ type GameProps = {
 
 export const Game = ({ word }: GameProps) => {
   const navigate = useNavigate();
+
   const [guesses, setGuesses] = useState<string[]>([]);
+
   const incorrectGuesses = getIncorrectGuesses(word, guesses);
   const gameStatus = getGameStatus(word, guesses, MAX_INCORRECT_GUESSES);
   const isFinished = gameStatus !== GameStatus.Playing;
