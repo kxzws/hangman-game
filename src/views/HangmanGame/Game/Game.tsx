@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Keyboard, Screen, Word } from '../../../components';
+import { Alphabet, Screen, Word } from '../../../components';
 import { ALPHABET, MAX_INCORRECT_GUESSES } from '../../../constants/game';
 import { GameStatus, getGameStatus, getIncorrectGuesses } from '../../../utils/game';
 
@@ -42,7 +42,7 @@ export const Game = ({ word }: GameProps) => {
           </NewGameButton>
         </>
       )}
-      <Keyboard
+      <Alphabet
         letters={ALPHABET}
         guessedLetters={guesses}
         disabled={isFinished}

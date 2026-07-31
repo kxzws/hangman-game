@@ -1,4 +1,4 @@
 export * from './Header';
-export * from './Keyboard';
+export * from './Alphabet';
 export * from './Screen';
 export * from './Word';
