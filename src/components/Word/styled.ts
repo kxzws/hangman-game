@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-family: monospace;
+  font-size: 2rem;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
 `;

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 
-import { Screen, Word } from '../../components';
 import { isGameLocationState } from '../../utils/game';
 import { isValidGameWord } from '../../utils/words';
 
-import { Container } from './styled';
+import { Game } from './Game';
 
 export const HangmanGame = () => {
   const location = useLocation();
@@ -14,10 +13,7 @@ export const HangmanGame = () => {
     return <Navigate to="/" replace />;
   }
 
-  return (
-    <Container>
-      <Screen />
-      <Word />
-    </Container>
-  );
+  const word = location.state.word.toLowerCase();
+
+  return <Game word={word} />;
 };
