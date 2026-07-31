@@ -2,7 +2,11 @@ export type GameLocationState = {
   word: string;
 };
 
-export type GameStatus = 'playing' | 'won' | 'lost';
+export enum GameStatus {
+  Playing = 'playing',
+  Won = 'won',
+  Lost = 'lost',
+}
 
 export const isGameLocationState = (state: unknown): state is GameLocationState => {
   if (typeof state !== 'object' || state === null || !('word' in state)) {
@@ -21,8 +25,10 @@ export const getGameStatus = (
   maxIncorrectGuesses: number
 ): GameStatus => {
   if (getIncorrectGuesses(word, guesses).length >= maxIncorrectGuesses) {
-    return 'lost';
+    return GameStatus.Lost;
   }
 
-  return word.split('').every((letter) => guesses.includes(letter)) ? 'won' : 'playing';
+  return word.split('').every((letter) => guesses.includes(letter))
+    ? GameStatus.Won
+    : GameStatus.Playing;
 };

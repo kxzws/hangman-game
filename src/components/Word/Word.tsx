@@ -14,5 +14,5 @@ export const Word = ({ word, guesses, revealWord }: WordProps) => {
     .map((letter) => (revealWord || guesses.includes(letter) ? letter : '_'))
     .join(' ');
 
-  return <Container aria-label={`Word to guess: ${displayedWord}`}>{displayedWord}</Container>;
+  return <Container aria-label="Word to guess">{displayedWord}</Container>;
 };
