@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Alphabet, Hangman, ResultModal, Word } from '../../../components';
+import { Alphabet, ResultModal, Screen, Word } from '../../../components';
 import { ALPHABET, MAX_INCORRECT_GUESSES } from '../../../constants/game';
 import { GameStatus, getGameStatus, getIncorrectGuesses } from '../../../utils/game';
 
@@ -30,7 +30,7 @@ export const Game = ({ word }: GameProps) => {
 
   return (
     <Container>
-      <Hangman wrongGuessCount={incorrectGuesses.length} />
+      <Screen wrongGuessCount={incorrectGuesses.length} />
       <Word word={word} guesses={guesses} revealWord={isFinished} />
       <IncorrectGuesses>
         Incorrect guesses: {incorrectGuesses.join(', ') || 'None'}
