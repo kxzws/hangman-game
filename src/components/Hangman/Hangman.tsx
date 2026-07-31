@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Container } from './styled';
 
-type ScreenProps = {
+type HangmanProps = {
   wrongGuessCount: number;
 };
 
-export const Screen = ({ wrongGuessCount }: ScreenProps) => {
+export const Hangman = ({ wrongGuessCount }: HangmanProps) => {
   return (
     <Container
       role="img"
