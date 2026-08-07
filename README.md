@@ -19,7 +19,7 @@ letter at a time.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) 18 or later (the active LTS release is recommended)
+- [Node.js](https://nodejs.org/) 24 LTS
 - npm (included with Node.js)
 
 ### Install and start
