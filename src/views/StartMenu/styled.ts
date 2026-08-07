@@ -4,17 +4,17 @@ export const Container = styled.form`
   width: 360px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   row-gap: 24px;
 `;
 
 export const ModeGroup = styled.fieldset`
   margin: 0;
-  padding: 18px 20px;
-  border: 2px solid #171717;
-  border-radius: 48% 52% 46% 54% / 7% 6% 8% 7%;
+  padding: 0;
+  border: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 18px;
 `;
 
@@ -66,6 +66,7 @@ export const ErrorMessage = styled.p`
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 18px;
+  text-align: center;
 `;
 
 export const StartBtn = styled.button`

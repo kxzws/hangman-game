@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Svg = styled.svg`
   display: block;
   margin: 0 auto;
-  width: min(100%, 190px);
+  width: min(100%, 210px);
   height: auto;
   fill: none;
   stroke: #171717;

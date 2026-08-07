@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const IncorrectGuesses = styled.p`
   width: 100%;
-  margin: 0;
+  margin: 10px 0;
   padding: 6px 14px;
   border-top: 2px solid #171717;
   border-bottom: 2px solid #171717;

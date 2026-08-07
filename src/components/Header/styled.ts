@@ -19,6 +19,12 @@ export const Header = styled.header`
   }
 `;
 
+export const TitleGroup = styled.div`
+  display: inline-flex;
+  align-items: center;
+  column-gap: 12px;
+`;
+
 export const Heading = styled.h1`
   margin: 0;
   font-size: 2.5rem;
@@ -26,4 +32,15 @@ export const Heading = styled.h1`
   letter-spacing: 0;
   line-height: 1;
   text-transform: uppercase;
+`;
+
+export const PencilIcon = styled.svg`
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: #171717;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transform: rotate(-6deg);
 `;

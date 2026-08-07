@@ -15,7 +15,7 @@ export const Dialog = styled.div`
   flex-direction: column;
   row-gap: 24px;
   width: 380px;
-  padding: 30px;
+  padding: 42px;
   border: 2px solid #171717;
   border-radius: 47% 53% 49% 51% / 5% 4% 6% 5%;
   background: #fff;
@@ -28,6 +28,22 @@ export const Dialog = styled.div`
   p {
     margin: 0;
   }
+`;
+
+export const ResultMessage = styled.p`
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin: 0;
+
+  span {
+    font-size: 1rem;
+  }
+`;
+
+export const ResultWord = styled.span`
+  font-family: 'Courier New', monospace;
+  font-weight: 400;
 `;
 
 export const BackButton = styled.button`
