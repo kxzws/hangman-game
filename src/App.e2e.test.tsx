@@ -19,7 +19,10 @@ const guessLetters = (user: ReturnType<typeof userEvent.setup>, letters: string[
 describe('Hangman game e2e', () => {
   beforeEach(() => {
     render(
-      <MemoryRouter initialEntries={['/']}>
+      <MemoryRouter
+        initialEntries={['/']}
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <App />
       </MemoryRouter>
     );

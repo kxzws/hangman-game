@@ -2,6 +2,7 @@
   "name": "hangman-game",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "homepage": "https://kxzws.github.io/hangman-game",
   "dependencies": {
     "@types/react": "^18.2.14",
@@ -50,7 +51,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^14.3.1",
     "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.14.10",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
@@ -69,5 +70,8 @@
     "jsdom": "^22.1.0",
     "prettier": "^3.0.0",
     "vitest": "^1.6.1"
+  },
+  "overrides": {
+    "@testing-library/dom": "9.3.1"
   }
 }
