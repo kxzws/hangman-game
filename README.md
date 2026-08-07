@@ -44,7 +44,7 @@ its GitHub Pages path.
 | `npm run preview`      | Serves the production build locally.                   |
 | `npm test`             | Starts Vitest in watch mode.                           |
 | `npm run test:ci`      | Runs the Vitest suite once, suitable for CI.           |
-| `npm run lint`         | Checks TypeScript and TSX files with ESLint.           |
+| `npm run lint`         | Checks TypeScript and TSX files with Oxlint.           |
 | `npm run lint:fix`     | Automatically fixes lint issues where possible.        |
 | `npm run format`       | Formats project files with Prettier.                   |
 | `npm run format:check` | Verifies formatting without changing files.            |
@@ -57,7 +57,7 @@ its GitHub Pages path.
 - **Vite** with the React plugin for the development server and production builds
 - **React Router** for navigation between the start screen and game screen
 - **styled-components** and **Sass** for styling
-- **ESLint** and **Prettier** for code quality and consistent formatting
+- **Oxlint** and **Prettier** for code quality and consistent formatting
 - **Vitest**, **jsdom**, and **React Testing Library** for unit and end-to-end UI tests
 - **GitHub Actions** for pull-request checks and GitHub Pages deployments
 
