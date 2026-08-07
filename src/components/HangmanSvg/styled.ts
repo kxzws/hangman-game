@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const Svg = styled.svg`
   display: block;
   margin: 0 auto;
-  width: min(100%, 200px);
+  width: min(100%, 190px);
   height: auto;
   fill: none;
-  stroke: #000;
+  stroke: #171717;
   stroke-linecap: round;
-  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-width: 3.25;
 `;

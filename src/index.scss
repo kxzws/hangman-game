@@ -10,12 +10,19 @@ html {
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
-  color: #000;
+  color: #171717;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  min-width: 1024px;
+  background: #fff;
+}
+
+::selection {
+  background: #171717;
+  color: #fff;
 }
 
 button,
@@ -31,4 +38,11 @@ a {
 
 button {
   font: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #171717;
+  outline-offset: 4px;
 }
