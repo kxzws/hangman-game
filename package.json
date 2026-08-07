@@ -2,13 +2,12 @@
   "name": "hangman-game",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "homepage": "https://kxzws.github.io/hangman-game",
+  "engines": {
+    "node": ">=24 <25"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.38",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@types/react-redux": "^7.1.25",
@@ -30,8 +29,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:ci": "react-scripts test --watchAll=false --passWithNoTests",
+    "test": "vitest",
+    "test:ci": "vitest run",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write .",
@@ -54,6 +53,10 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.3.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^20.14.10",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "eslint": "^8.44.0",
@@ -67,6 +70,11 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "gh-pages": "^6.3.0",
-    "prettier": "^3.0.0"
+    "jsdom": "^22.1.0",
+    "prettier": "^3.0.0",
+    "vitest": "^1.6.1"
+  },
+  "overrides": {
+    "@testing-library/dom": "9.3.1"
   }
 }

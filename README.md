@@ -19,7 +19,7 @@ letter at a time.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) 18 or later (the active LTS release is recommended)
+- [Node.js](https://nodejs.org/) 24 LTS
 - npm (included with Node.js)
 
 ### Install and start
@@ -39,8 +39,8 @@ The development server opens the game at [http://localhost:3000](http://localhos
 | ---------------------- | -------------------------------------------------- |
 | `npm start`            | Runs the app locally in development mode.          |
 | `npm run build`        | Creates an optimized production build in `build/`. |
-| `npm test`             | Starts the test runner in watch mode.              |
-| `npm run test:ci`      | Runs tests once, suitable for CI.                  |
+| `npm test`             | Starts Vitest in watch mode.                       |
+| `npm run test:ci`      | Runs the Vitest suite once, suitable for CI.       |
 | `npm run lint`         | Checks TypeScript and TSX files with ESLint.       |
 | `npm run lint:fix`     | Automatically fixes lint issues where possible.    |
 | `npm run format`       | Formats project files with Prettier.               |
@@ -54,8 +54,8 @@ The development server opens the game at [http://localhost:3000](http://localhos
 - **React Router** for navigation between the start screen and game screen
 - **styled-components** and **Sass** for styling
 - **ESLint** and **Prettier** for code quality and consistent formatting
-- **Jest** and **React Testing Library** for test support
-- **GitHub Actions** for pull-request formatting and lint checks
+- **Vitest**, **jsdom**, and **React Testing Library** for unit and end-to-end UI tests
+- **GitHub Actions** for pull-request formatting, linting, and test checks
 
 ## Project details
 
