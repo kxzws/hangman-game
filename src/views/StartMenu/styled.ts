@@ -3,12 +3,12 @@ import styled, { keyframes } from 'styled-components';
 const revealWordField = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateX(-16px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 `;
 

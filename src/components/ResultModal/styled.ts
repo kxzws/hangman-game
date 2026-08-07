@@ -51,12 +51,8 @@ export const ResultMessage = styled.p`
 `;
 
 export const ResultStatus = styled.span`
-  font-size: 1.75rem;
-  line-height: 1.1;
-
-  @media (max-width: 320px) {
-    font-size: 1.6rem;
-  }
+  font-size: 2.25rem;
+  line-height: 1.05;
 `;
 
 export const ResultWord = styled.span`
