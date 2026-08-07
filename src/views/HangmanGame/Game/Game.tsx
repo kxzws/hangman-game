@@ -54,7 +54,9 @@ export const Game = ({ word }: GameProps) => {
         <ResultModal
           hasWon={gameStatus === GameStatus.Won}
           word={word}
-          onBackToStart={() => navigate('/')}
+          onBackToStart={() => {
+            void navigate('/');
+          }}
         />
       ) : null}
     </Container>

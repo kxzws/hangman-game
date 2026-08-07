@@ -62,7 +62,7 @@ export const StartMenu = () => {
 
     const word = gameMode === GameModeType.Random ? getRandomWord() : customWord.toLowerCase();
 
-    navigate('/game', { state: { word } });
+    void navigate('/game', { state: { word } });
   };
 
   return (
