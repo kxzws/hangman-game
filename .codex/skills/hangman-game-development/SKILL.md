@@ -7,6 +7,11 @@ description: Implement, review, or maintain features and fixes in the Hangman Ga
 
 Maintain the game as a small, dependency-light React 19 + TypeScript app. Preserve the pencil-style, responsive interface and the existing validation and deployment safeguards.
 
+## Workaround
+
+- Before every prompt analyzation and repo observation, pull latest changes for the branch.
+- All features implement within new branch, and push changes to remote origin and create draft PR, if it's the first commit on the branch.
+
 ## Work in the existing architecture
 
 - Keep game rules and word validation in `src/utils/`; add or update focused Vitest tests beside the utility.
