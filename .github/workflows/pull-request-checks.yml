@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   quality:
-    name: Formatting, linting, and tests
+    name: Formatting, linting, tests, and build
     runs-on: ubuntu-latest
 
     steps:
@@ -29,3 +29,6 @@ jobs:
 
       - name: Run tests
         run: npm run test:ci
+
+      - name: Type-check and build
+        run: npm run build

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { COLORS } from '../shared';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,10 +29,10 @@ export const Row = styled.div`
 export const Key = styled.button`
   width: 38px;
   height: 38px;
-  border: 2px solid #171717;
-  background: #fff;
+  border: 2px solid ${COLORS.ink};
+  background: ${COLORS.paper};
   border-radius: 46% 54% 49% 51% / 47% 44% 56% 53%;
-  color: #171717;
+  color: ${COLORS.ink};
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -48,8 +50,8 @@ export const Key = styled.button`
   }
 
   &:hover:not(:disabled) {
-    background: #171717;
-    color: #fff;
+    background: ${COLORS.ink};
+    color: ${COLORS.paper};
     transform: rotate(0deg) translateY(-2px);
   }
 
@@ -59,8 +61,8 @@ export const Key = styled.button`
 
   &:disabled {
     cursor: not-allowed;
-    border-color: #8a8a8a;
-    color: #8a8a8a;
+    border-color: ${COLORS.disabled};
+    color: ${COLORS.disabled};
     opacity: 1;
   }
 
