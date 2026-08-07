@@ -8,10 +8,7 @@ import './index.scss';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <Router
-      basename={import.meta.env.BASE_URL}
-      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-    >
+    <Router basename={import.meta.env.BASE_URL}>
       <App />
     </Router>
   </React.StrictMode>
