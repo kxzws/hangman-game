@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import { COLORS, handDrawnButton } from '../../components/styled';
+
 const revealWordField = keyframes`
   from {
     opacity: 0;
@@ -63,12 +65,12 @@ export const Label = styled.label`
     width: 24px;
     height: 24px;
     margin: 0;
-    border: 2px solid #171717;
+    border: 2px solid ${COLORS.ink};
     border-radius: 48% 52% 45% 55%;
-    background: #fff;
+    background: ${COLORS.paper};
 
     &:checked {
-      border: 6px solid #171717;
+      border: 6px solid ${COLORS.ink};
     }
   }
 `;
@@ -86,10 +88,10 @@ export const WordInput = styled.input`
   padding: 11px 12px;
   font-size: 1rem;
   line-height: 1.25;
-  border: 2px solid #171717;
+  border: 2px solid ${COLORS.ink};
   border-radius: 49% 51% 48% 52% / 12% 10% 14% 12%;
-  background: #fff;
-  color: #171717;
+  background: ${COLORS.paper};
+  color: ${COLORS.ink};
   transition:
     border-color 180ms ease,
     transform 180ms ease;
@@ -111,26 +113,8 @@ export const ErrorMessage = styled.p`
 `;
 
 export const StartBtn = styled.button`
-  min-height: 44px;
+  ${handDrawnButton}
+
   padding: 0 26px;
   font-size: 1rem;
-  font-weight: 700;
-  border: 2px solid #171717;
-  background: #fff;
-  color: #171717;
-  border-radius: 48% 52% 49% 51% / 50% 47% 53% 50%;
-  transition:
-    background-color 220ms ease,
-    color 220ms ease,
-    transform 220ms ease;
-
-  &:hover {
-    color: #fff;
-    background-color: #171717;
-    transform: translateY(-2px) rotate(-0.5deg);
-  }
-
-  &:active {
-    transform: translateY(1px);
-  }
 `;

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { COLORS, handDrawnButton } from '../styled';
+
 export const Overlay = styled.div`
   position: fixed;
   inset: 0;
@@ -16,10 +18,10 @@ export const Dialog = styled.div`
   row-gap: 24px;
   width: 380px;
   padding: 42px;
-  border: 2px solid #171717;
+  border: 2px solid ${COLORS.ink};
   border-radius: 47% 53% 49% 51% / 5% 4% 6% 5%;
-  background: #fff;
-  color: #171717;
+  background: ${COLORS.paper};
+  color: ${COLORS.ink};
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.25;
@@ -61,26 +63,8 @@ export const ResultWord = styled.span`
 `;
 
 export const BackButton = styled.button`
-  min-height: 44px;
+  ${handDrawnButton}
+
   padding: 0 18px;
-  border: 2px solid #171717;
-  background: #fff;
-  color: #171717;
   font-size: 1rem;
-  font-weight: 700;
-  border-radius: 48% 52% 49% 51% / 50% 47% 53% 50%;
-  transition:
-    background-color 220ms ease,
-    color 220ms ease,
-    transform 220ms ease;
-
-  &:hover {
-    background: #171717;
-    color: #fff;
-    transform: translateY(-2px) rotate(-0.5deg);
-  }
-
-  &:active {
-    transform: translateY(1px);
-  }
 `;
