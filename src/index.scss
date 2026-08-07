@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -5,11 +7,20 @@
 }
 
 html {
-  font-family: serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
   color: #000;
   scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font-family: inherit;
 }
 
 a {

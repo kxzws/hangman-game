@@ -4,7 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import { MAX_WORD_LENGTH, MIN_WORD_LENGTH } from '../../constants/words';
 import { getRandomWord, isValidGameWord } from '../../utils/words';
 
-import { Container, ErrorMessage, Label, ModeGroup, StartBtn, WordInput } from './styled';
+import {
+  Container,
+  ErrorMessage,
+  Label,
+  ModeGroup,
+  StartBtn,
+  WordField,
+  WordInput,
+} from './styled';
 
 enum GameModeType {
   Random = 'random',
@@ -79,7 +87,7 @@ export const StartMenu = () => {
       </ModeGroup>
 
       {gameMode === GameModeType.Word && (
-        <>
+        <WordField>
           <WordInput
             id="custom-word"
             type="text"
@@ -91,12 +99,10 @@ export const StartMenu = () => {
             aria-invalid={Boolean(validationError)}
             aria-describedby={validationError ? 'custom-word-error' : undefined}
           />
-          {validationError && (
-            <ErrorMessage id="custom-word-error" role="alert">
-              {validationError}
-            </ErrorMessage>
-          )}
-        </>
+          <ErrorMessage id="custom-word-error" role="alert">
+            {validationError}
+          </ErrorMessage>
+        </WordField>
       )}
 
       <StartBtn type="submit">Start</StartBtn>

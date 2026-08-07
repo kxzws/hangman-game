@@ -20,7 +20,7 @@ export const Dialog = styled.div`
   background: #fff;
   color: #000;
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.25;
   text-align: center;
 `;
@@ -31,4 +31,6 @@ export const BackButton = styled.button`
   border: 1px solid #000;
   background: #fff;
   color: #000;
+  font-size: 1rem;
+  font-weight: 700;
 `;
