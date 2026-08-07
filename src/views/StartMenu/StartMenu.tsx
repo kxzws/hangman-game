@@ -34,6 +34,9 @@ export const StartMenu = () => {
     }
 
     setGameMode(nextGameMode);
+    if (nextGameMode === GameModeType.Random) {
+      setCustomWord('');
+    }
     setValidationError('');
   };
 

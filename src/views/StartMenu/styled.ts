@@ -23,6 +23,12 @@ export const Label = styled.label`
   column-gap: 6px;
   font-size: 1rem;
   font-weight: 500;
+
+  input {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+  }
 `;
 
 export const WordField = styled.div`

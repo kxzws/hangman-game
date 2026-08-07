@@ -33,7 +33,7 @@ export const Game = ({ word }: GameProps) => {
       <Screen wrongGuessCount={incorrectGuesses.length} />
       <Word word={word} guesses={guesses} revealWord={isFinished} />
       <IncorrectGuesses>
-        Incorrect guesses: {incorrectGuesses.join(', ') || 'None'}
+        incorrect guesses: {incorrectGuesses.join(', ') || 'none'}
       </IncorrectGuesses>
       <Alphabet
         letters={ALPHABET}
