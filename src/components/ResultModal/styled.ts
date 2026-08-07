@@ -28,17 +28,31 @@ export const Dialog = styled.div`
   p {
     margin: 0;
   }
+
+  @media (max-width: 768px) {
+    width: min(380px, 100%);
+    padding: 36px;
+  }
+
+  @media (max-width: 320px) {
+    padding: 28px;
+  }
 `;
 
 export const ResultMessage = styled.p`
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: 14px;
   margin: 0;
 
   span {
     font-size: 1rem;
   }
+`;
+
+export const ResultStatus = styled.span`
+  font-size: 1.5rem;
+  line-height: 1.1;
 `;
 
 export const ResultWord = styled.span`
@@ -55,9 +69,19 @@ export const BackButton = styled.button`
   color: #171717;
   font-size: 1rem;
   font-weight: 700;
+  border-radius: 48% 52% 49% 51% / 50% 47% 53% 50%;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
 
   &:hover {
     background: #171717;
     color: #fff;
+    transform: translateY(-2px) rotate(-0.5deg);
+  }
+
+  &:active {
+    transform: translateY(1px);
   }
 `;

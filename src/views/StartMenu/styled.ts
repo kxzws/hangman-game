@@ -1,4 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const revealWordField = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const Container = styled.form`
   width: 360px;
@@ -6,6 +18,14 @@ export const Container = styled.form`
   flex-direction: column;
   align-items: center;
   row-gap: 24px;
+
+  @media (max-width: 768px) {
+    width: min(360px, 100%);
+  }
+
+  @media (max-width: 320px) {
+    row-gap: 20px;
+  }
 `;
 
 export const ModeGroup = styled.fieldset`
@@ -46,6 +66,7 @@ export const WordField = styled.div`
   flex-direction: column;
   row-gap: 8px;
   width: 100%;
+  animation: ${revealWordField} 220ms ease-out both;
 `;
 
 export const WordInput = styled.input`
@@ -57,6 +78,14 @@ export const WordInput = styled.input`
   border-radius: 49% 51% 48% 52% / 12% 10% 14% 12%;
   background: #fff;
   color: #171717;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+
+  &:focus {
+    border-color: #171717;
+    transform: translateY(-1px);
+  }
 `;
 
 export const ErrorMessage = styled.p`
@@ -78,18 +107,19 @@ export const StartBtn = styled.button`
   border-radius: 47% 53% 46% 54% / 18% 14% 20% 16%;
   background: #fff;
   color: #171717;
-  text-transform: uppercase;
+  border-radius: 48% 52% 49% 51% / 50% 47% 53% 50%;
   transition:
-    background-color 120ms ease,
-    color 120ms ease,
-    transform 120ms ease;
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
 
   &:hover {
     color: #fff;
     background-color: #171717;
+    transform: translateY(-2px) rotate(-0.5deg);
   }
 
   &:active {
-    transform: translate(1px, 1px);
+    transform: translateY(1px);
   }
 `;

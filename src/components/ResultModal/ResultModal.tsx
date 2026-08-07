@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BackButton, Dialog, Overlay, ResultMessage, ResultWord } from './styled';
+import { BackButton, Dialog, Overlay, ResultMessage, ResultStatus, ResultWord } from './styled';
 
 type ResultModalProps = {
   hasWon: boolean;
@@ -14,10 +14,10 @@ export const ResultModal = ({ hasWon, word, onBackToStart }: ResultModalProps) =
       <Dialog role="dialog" aria-modal="true" aria-labelledby="game-result-title">
         <ResultMessage id="game-result-title">
           {hasWon ? (
-            'You won!'
+            <ResultStatus>You won!</ResultStatus>
           ) : (
             <>
-              You lost!
+              <ResultStatus>You lost!</ResultStatus>
               <span>
                 The word was: <ResultWord>{word}</ResultWord>
               </span>

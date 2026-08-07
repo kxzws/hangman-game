@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 460px;
+  width: min(460px, 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 14px;
+
+  @media (max-width: 768px) {
+    row-gap: 16px;
+  }
+
+  @media (max-width: 320px) {
+    row-gap: 12px;
+  }
 `;
 
 export const IncorrectGuesses = styled.p`
@@ -19,4 +27,9 @@ export const IncorrectGuesses = styled.p`
   line-height: 1.25;
   text-align: center;
   text-transform: lowercase;
+
+  @media (max-width: 320px) {
+    margin: 6px 0;
+    font-size: 0.875rem;
+  }
 `;

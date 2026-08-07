@@ -5,12 +5,23 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   row-gap: 8px;
+
+  @media (max-width: 320px) {
+    display: grid;
+    grid-template-columns: repeat(7, 32px);
+    gap: 8px 6px;
+    width: 260px;
+  }
 `;
 
 export const Row = styled.div`
   display: flex;
   justify-content: center;
   gap: 8px;
+
+  @media (max-width: 320px) {
+    display: contents;
+  }
 `;
 
 export const Key = styled.button`
@@ -51,5 +62,11 @@ export const Key = styled.button`
     border-color: #8a8a8a;
     color: #8a8a8a;
     opacity: 1;
+  }
+
+  @media (max-width: 320px) {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
   }
 `;
