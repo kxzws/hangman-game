@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Hangman Game Development'
+  short_description: 'Build and maintain the Hangman game'
+  default_prompt: 'Use $hangman-game-development to implement a change in this repository.'
