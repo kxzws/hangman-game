@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import { COLORS, handDrawnButton } from '../../components/shared';
+import { COLORS, handDrawnButton } from '../../components/styled';
 
 const revealWordField = keyframes`
   from {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { COLORS, handDrawnButton } from '../shared';
+import { COLORS, handDrawnButton } from '../styled';
 
 export const Overlay = styled.div`
   position: fixed;
