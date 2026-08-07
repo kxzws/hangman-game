@@ -37,7 +37,7 @@ export const Game = ({ word }: GameProps) => {
           <path d="M1 4 C115 2 224 5 340 3 C382 2 422 4 459 3" />
         </WobblyLine>
         <IncorrectGuesses>
-          incorrect guesses: {incorrectGuesses.join(', ') || 'none'}
+          incorrect guesses: {incorrectGuesses.length > 0 ? incorrectGuesses.join(', ') : 'none'}
         </IncorrectGuesses>
         <WobblyLine viewBox="0 0 460 8" preserveAspectRatio="none" aria-hidden="true">
           <path d="M1 3 C106 5 230 2 348 4 C387 5 424 2 459 4" />
@@ -50,13 +50,13 @@ export const Game = ({ word }: GameProps) => {
         onGuess={handleGuess}
       />
 
-      {isFinished && (
+      {isFinished ? (
         <ResultModal
           hasWon={gameStatus === GameStatus.Won}
           word={word}
           onBackToStart={() => navigate('/')}
         />
-      )}
+      ) : null}
     </Container>
   );
 };
