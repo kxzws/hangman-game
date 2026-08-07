@@ -31,30 +31,33 @@ npm ci
 npm start
 ```
 
-The development server opens the game at [http://localhost:3000](http://localhost:3000).
+The development server opens the game at [http://localhost:5173](http://localhost:5173).
 
 ## Available commands
 
-| Command                | Description                                        |
-| ---------------------- | -------------------------------------------------- |
-| `npm start`            | Runs the app locally in development mode.          |
-| `npm run build`        | Creates an optimized production build in `build/`. |
-| `npm test`             | Starts the test runner in watch mode.              |
-| `npm run test:ci`      | Runs tests once, suitable for CI.                  |
-| `npm run lint`         | Checks TypeScript and TSX files with ESLint.       |
-| `npm run lint:fix`     | Automatically fixes lint issues where possible.    |
-| `npm run format`       | Formats project files with Prettier.               |
-| `npm run format:check` | Verifies formatting without changing files.        |
-| `npm run check`        | Runs formatting verification and linting.          |
+| Command                | Description                                            |
+| ---------------------- | ------------------------------------------------------ |
+| `npm start`            | Runs the Vite development server.                      |
+| `npm run dev`          | Alias for `npm start`.                                 |
+| `npm run build`        | Type-checks and creates a production build in `dist/`. |
+| `npm run preview`      | Serves the production build locally.                   |
+| `npm test`             | Starts the Vitest runner in watch mode.                |
+| `npm run test:ci`      | Runs tests once, suitable for CI.                      |
+| `npm run lint`         | Checks TypeScript and TSX files with ESLint.           |
+| `npm run lint:fix`     | Automatically fixes lint issues where possible.        |
+| `npm run format`       | Formats project files with Prettier.                   |
+| `npm run format:check` | Verifies formatting without changing files.            |
+| `npm run check`        | Runs formatting verification and linting.              |
+| `npm run deploy`       | Builds and publishes `dist/` to GitHub Pages.          |
 
 ## Technology stack
 
 - **React 18** and **TypeScript** for the user interface and type-safe game logic
-- **Create React App** (`react-scripts`) for the development server and production builds
+- **Vite** for the development server and production builds
 - **React Router** for navigation between the start screen and game screen
 - **styled-components** and **Sass** for styling
 - **ESLint** and **Prettier** for code quality and consistent formatting
-- **Jest** and **React Testing Library** for test support
+- **Vitest**, jsdom, and React Testing Library for test support
 - **GitHub Actions** for pull-request formatting and lint checks
 
 ## Project details
@@ -64,6 +67,13 @@ The development server opens the game at [http://localhost:3000](http://localhos
 - Invalid or missing game state redirects safely back to the start screen.
 - The game uses an accessible, button-based on-screen alphabet keyboard with
   labels for its interactive controls.
+
+## GitHub Pages deployment
+
+`npm run deploy` first creates a production build, then publishes `dist/` to the
+`gh-pages` branch. The Vite production base path is configured as
+`/hangman-game/`, so assets and client-side routes work when the app is hosted at
+`https://kxzws.github.io/hangman-game/`.
 
 ## AI assistance
 

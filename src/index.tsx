@@ -8,7 +8,7 @@ import './index.scss';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <Router basename={process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : '/'}>
+    <Router basename={import.meta.env.BASE_URL}>
       <App />
     </Router>
   </React.StrictMode>
