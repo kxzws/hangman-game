@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { Header } from './components';
 import { AppLayout, Main } from './styled';
@@ -14,6 +14,8 @@ const App = () => {
           <Route path="/game" element={<HangmanGame />} />
 
           <Route path="/" element={<StartMenu />} />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Main>
     </AppLayout>
