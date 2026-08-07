@@ -95,5 +95,15 @@
       }
     ]
   },
+  "overrides": [
+    {
+      "files": ["src/setupTests.ts", "**/*.test.ts", "**/*.test.tsx"],
+      "rules": {
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "no-await-in-loop": "off",
+        "no-restricted-syntax": "off"
+      }
+    }
+  ],
   "root": true
 }
