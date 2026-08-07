@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -5,11 +7,28 @@
 }
 
 html {
-  font-family: serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
-  color: #000;
+  color: #171717;
   scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #fbfdff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M0 31.5 H32' stroke='%23d7e6f5' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 32px 32px;
+}
+
+::selection {
+  background: #171717;
+  color: #fff;
+}
+
+button,
+input {
+  font-family: inherit;
 }
 
 a {
@@ -20,4 +39,17 @@ a {
 
 button {
   font: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 1px solid #171717;
+  outline-offset: 4px;
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 15px;
+  }
 }

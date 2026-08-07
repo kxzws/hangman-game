@@ -1,10 +1,21 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { HangmanSvg } from '../../components';
+import { MAX_INCORRECT_GUESSES } from '../../constants/game';
 import { MAX_WORD_LENGTH, MIN_WORD_LENGTH } from '../../constants/words';
 import { getRandomWord, isValidGameWord } from '../../utils/words';
 
-import { Container, ErrorMessage, Label, ModeGroup, StartBtn, WordInput } from './styled';
+import {
+  Container,
+  ErrorMessage,
+  Label,
+  ModeGroup,
+  StartIllustration,
+  StartBtn,
+  WordField,
+  WordInput,
+} from './styled';
 
 enum GameModeType {
   Random = 'random',
@@ -26,6 +37,9 @@ export const StartMenu = () => {
     }
 
     setGameMode(nextGameMode);
+    if (nextGameMode === GameModeType.Random) {
+      setCustomWord('');
+    }
     setValidationError('');
   };
 
@@ -52,6 +66,9 @@ export const StartMenu = () => {
 
   return (
     <Container aria-label="Start a Hangman game" onSubmit={handleSubmit}>
+      <StartIllustration aria-hidden="true">
+        <HangmanSvg wrongGuessCount={MAX_INCORRECT_GUESSES} />
+      </StartIllustration>
       <ModeGroup aria-label="Game mode">
         <Label htmlFor="random">
           <input
@@ -79,7 +96,7 @@ export const StartMenu = () => {
       </ModeGroup>
 
       {gameMode === GameModeType.Word && (
-        <>
+        <WordField>
           <WordInput
             id="custom-word"
             type="text"
@@ -91,12 +108,10 @@ export const StartMenu = () => {
             aria-invalid={Boolean(validationError)}
             aria-describedby={validationError ? 'custom-word-error' : undefined}
           />
-          {validationError && (
-            <ErrorMessage id="custom-word-error" role="alert">
-              {validationError}
-            </ErrorMessage>
-          )}
-        </>
+          <ErrorMessage id="custom-word-error" role="alert">
+            {validationError}
+          </ErrorMessage>
+        </WordField>
       )}
 
       <StartBtn type="submit">Start</StartBtn>
