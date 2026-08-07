@@ -16,12 +16,33 @@ export const Container = styled.div`
   }
 `;
 
-export const IncorrectGuesses = styled.p`
+export const IncorrectGuessesGroup = styled.div`
   width: 100%;
   margin: 10px 0;
-  padding: 6px 14px;
-  border-top: 2px solid #171717;
-  border-bottom: 2px solid #171717;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  @media (max-width: 320px) {
+    margin: 6px 0;
+  }
+`;
+
+export const WobblyLine = styled.svg`
+  display: block;
+  width: 100%;
+  height: 8px;
+  fill: none;
+  pointer-events: none;
+  stroke: #171717;
+  stroke-linecap: round;
+  stroke-width: 2;
+`;
+
+export const IncorrectGuesses = styled.p`
+  width: 100%;
+  margin: 0;
+  padding: 0 14px;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.25;
@@ -29,7 +50,6 @@ export const IncorrectGuesses = styled.p`
   text-transform: lowercase;
 
   @media (max-width: 320px) {
-    margin: 6px 0;
     font-size: 0.875rem;
   }
 `;

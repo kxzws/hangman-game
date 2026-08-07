@@ -51,8 +51,12 @@ export const ResultMessage = styled.p`
 `;
 
 export const ResultStatus = styled.span`
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 1.1;
+
+  @media (max-width: 320px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const ResultWord = styled.span`
@@ -64,7 +68,6 @@ export const BackButton = styled.button`
   min-height: 44px;
   padding: 0 18px;
   border: 2px solid #171717;
-  border-radius: 48% 52% 45% 55% / 16% 12% 18% 14%;
   background: #fff;
   color: #171717;
   font-size: 1rem;

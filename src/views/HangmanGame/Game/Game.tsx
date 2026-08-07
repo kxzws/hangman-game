@@ -5,7 +5,7 @@ import { Alphabet, ResultModal, Screen, Word } from '../../../components';
 import { ALPHABET, MAX_INCORRECT_GUESSES } from '../../../constants/game';
 import { GameStatus, getGameStatus, getIncorrectGuesses } from '../../../utils/game';
 
-import { Container, IncorrectGuesses } from './styled';
+import { Container, IncorrectGuesses, IncorrectGuessesGroup, WobblyLine } from './styled';
 
 type GameProps = {
   word: string;
@@ -32,9 +32,17 @@ export const Game = ({ word }: GameProps) => {
     <Container>
       <Screen wrongGuessCount={incorrectGuesses.length} />
       <Word word={word} guesses={guesses} revealWord={isFinished} />
-      <IncorrectGuesses>
-        incorrect guesses: {incorrectGuesses.join(', ') || 'none'}
-      </IncorrectGuesses>
+      <IncorrectGuessesGroup>
+        <WobblyLine viewBox="0 0 460 8" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M1 4 C115 2 224 5 340 3 C382 2 422 4 459 3" />
+        </WobblyLine>
+        <IncorrectGuesses>
+          incorrect guesses: {incorrectGuesses.join(', ') || 'none'}
+        </IncorrectGuesses>
+        <WobblyLine viewBox="0 0 460 8" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M1 3 C106 5 230 2 348 4 C387 5 424 2 459 4" />
+        </WobblyLine>
+      </IncorrectGuessesGroup>
       <Alphabet
         letters={ALPHABET}
         guessedLetters={guesses}

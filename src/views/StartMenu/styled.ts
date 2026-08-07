@@ -28,6 +28,18 @@ export const Container = styled.form`
   }
 `;
 
+export const StartIllustration = styled.div`
+  width: 128px;
+
+  svg {
+    width: 100%;
+  }
+
+  @media (max-width: 320px) {
+    width: 112px;
+  }
+`;
+
 export const ModeGroup = styled.fieldset`
   margin: 0;
   padding: 0;
@@ -104,7 +116,6 @@ export const StartBtn = styled.button`
   font-size: 1rem;
   font-weight: 700;
   border: 2px solid #171717;
-  border-radius: 47% 53% 46% 54% / 18% 14% 20% 16%;
   background: #fff;
   color: #171717;
   border-radius: 48% 52% 49% 51% / 50% 47% 53% 50%;
